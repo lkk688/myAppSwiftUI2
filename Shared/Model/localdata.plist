@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>identifier</key>
+		<integer>1</integer>
+		<key>latitude</key>
+		<real>51.5072</real>
+		<key>longitude</key>
+		<real>-0.1275</real>
+		<key>name</key>
+		<string>London</string>
+		<key>title</key>
+		<string>Tower of London, British Museum, Portobello Road, Borough Market</string>
+		<key>thumbnailName</key>
+		<string>london-thumb</string>
+		<key>userRating</key>
+		<integer>4</integer>
+		<key>story</key>
+		<string>Some places to visit are the Tower of London and the British Museum, or explore Portobello Road and Borough Market.</string>
+		<key>webLink</key>
+		<string>https://en.wikipedia.org/wiki/London</string>
+	</dict>
+	<dict>
+		<key>identifier</key>
+		<integer>2</integer>
+		<key>latitude</key>
+		<real>28.4186</real>
+		<key>longitude</key>
+		<real>-81.58110000000001</real>
+		<key>name</key>
+		<string>Walt Disney World</string>
+		<key>title</key>
+		<string>Downtown Disney, Space Mountain</string>
+		<key>thumbnailName</key>
+		<string>walt-disney-world-thumb</string>
+		<key>userRating</key>
+		<integer>5</integer>
+		<key>story</key>
+		<string>Be sure to visit Downtown Disney, ride Space Mountain, and schedule a special breakfast with the Disney characters!</string>
+		<key>webLink</key>
+		<string>https://en.wikipedia.org/wiki/Walt_Disney_World</string>
+	</dict>
+	<dict>
+		<key>identifier</key>
+		<integer>9</integer>
+		<key>latitude</key>
+		<real>63.3333</real>
+		<key>longitude</key>
+		<real>150.5</real>
+		<key>name</key>
+		<string>Denali National Park &amp; Preserve</string>
+		<key>title</key>
+		<string>Savage River, Sled Dog Kernels, Wonder Lake Ranger Station</string>
+		<key>thumbnailName</key>
+		<string>denali-national-park-and-preserve-thumb</string>
+		<key>userRating</key>
+		<integer>3</integer>
+		<key>story</key>
+		<string>Places to visit include Savage River, the Sled Dog Kennels and the Wonder Lake Ranger Station. Be sure to book a wildlife bus tour on Park Road too!</string>
+		<key>webLink</key>
+		<string>https://en.wikipedia.org/wiki/Denali_National_Park_and_Preserve</string>
+	</dict>
+	<dict>
+		<key>identifier</key>
+		<integer>5</integer>
+		<key>latitude</key>
+		<real>-33.865</real>
+		<key>longitude</key>
+		<real>151.2094</real>
+		<key>name</key>
+		<string>Sydney</string>
+		<key>title</key>
+		<string>Sydney Opera House</string>
+		<key>thumbnailName</key>
+		<string>sydney-thumb</string>
+		<key>userRating</key>
+		<integer>5</integer>
+		<key>story</key>
+		<string>Be sure to visit St. Mary&apos;s Cathedral, the Sydney Opera House, Wildlife Sydney and Fort Denison.</string>
+		<key>webLink</key>
+		<string>https://en.wikipedia.org/wiki/Sydney</string>
+	</dict>
+	<dict>
+		<key>identifier</key>
+		<integer>8</integer>
+		<key>latitude</key>
+		<real>39.9167</real>
+		<key>longitude</key>
+		<real>116.3833</real>
+		<key>name</key>
+		<string>Beijing</string>
+		<key>title</key>
+		<string>Tiananmen Square</string>
+		<key>thumbnailName</key>
+		<string>beijing-thumb</string>
+		<key>userRating</key>
+		<integer>5</integer>
+		<key>story</key>
+		<string>Plan a day to explore the Great Wall of China, Tiananmen Square, the Mogao Caves, Shanghai Tower, The Temple of Heaven and Old Summer Palace.</string>
+		<key>webLink</key>
+		<string>https://en.wikipedia.org/wiki/Beijing</string>
+	</dict>
+</array>
+</plist>
