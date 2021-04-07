@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct myAppSwiftUI2App: App {
+    @StateObject private var userdata = UserData()
     var body: some Scene {
         WindowGroup {
-            NewsList()
+            //NewsList()
+            TabedView().environmentObject(userdata)
+            //Profile(currentuser: userdata)
         }
     }
 }

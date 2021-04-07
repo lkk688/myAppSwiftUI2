@@ -22,6 +22,16 @@ struct Coordinate: Codable, Hashable {
 
 class NewsData: NSObject, Identifiable, NSCoding {
     
+    //MARK: Properties
+    var identifier: Int
+    var title: String
+    var name: String?
+    var story: String?
+    var photo: UIImage? //String? //UIImage?
+    var rating: Int
+    var weblink: URL?
+    var coordinate: Coordinate? //CLLocationCoordinate2D?
+    
     //MARK: NSCoding
     func encode(with coder: NSCoder) {
         coder.encode(identifier, forKey: PropertyKey.identifier)
@@ -94,15 +104,6 @@ class NewsData: NSObject, Identifiable, NSCoding {
     static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
     static let ArchiveURL = DocumentsDirectory.appendingPathComponent("MyModelData")
     
-    //MARK: Properties
-    var identifier: Int
-    var title: String
-    var name: String?
-    var story: String?
-    var photo: UIImage? //String? //UIImage?
-    var rating: Int
-    var weblink: URL?
-    var coordinate: Coordinate? //CLLocationCoordinate2D?
     
     struct PropertyKey {
         static let identifier = "id"
