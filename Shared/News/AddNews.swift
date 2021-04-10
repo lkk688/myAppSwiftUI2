@@ -34,6 +34,8 @@ struct BuildingPicker: View {
 struct AddNews: View {
     @State var addnews = AddNewsData()
     
+    @Binding var newsdata: [NewsData]
+    
     @Binding var showSheetView: Bool
     var body: some View {
         NavigationView {
@@ -74,7 +76,12 @@ struct AddNews: View {
             }
             .navigationTitle("Post your news")
             .navigationBarItems(trailing: Button(action: {
-                print("Dismissing sheet view...")
+                print("Saving new data, Dismissing sheet view...")
+                let creatednewdata = NewsData.init(identifier: 1, title: addnews.title, name: addnews.name, story: addnews.story, photo: nil, rating: addnews.rating, weblink: nil, coordinate: nil)
+                if creatednewdata != nil {
+                    newsdata.append(creatednewdata!)
+                }
+                
                 self.showSheetView = false
             }) {
                 Text("Save").bold()
@@ -85,6 +92,6 @@ struct AddNews: View {
 
 struct AddNews_Previews: PreviewProvider {
     static var previews: some View {
-        AddNews(showSheetView: .constant(true))
+        AddNews(newsdata: .constant(NewsData.defaultData), showSheetView:.constant(true))
     }
 }

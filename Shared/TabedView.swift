@@ -8,10 +8,12 @@
 import SwiftUI
 
 struct TabedView: View {
+    @EnvironmentObject var currentuser: UserData
+    
     @State private var tabSelected = 0
     var body: some View {
         TabView(selection: $tabSelected) {
-            NewsList()
+            NewsList(newsdata: $currentuser.newsdata)
                 .tabItem {
                     Image(systemName: (tabSelected == 0 ? "newspaper" : "newspaper.fill") )
                     Text("News")
@@ -24,7 +26,7 @@ struct TabedView: View {
             ImagePickView()
                 .tabItem {
                     Image(systemName: (tabSelected == 2 ? "photo" : "photo.fill") )
-                    Text("Profile")
+                    Text("Photos")
                 }.tag(2)
         }
     }
@@ -32,6 +34,6 @@ struct TabedView: View {
 
 struct TabedView_Previews: PreviewProvider {
     static var previews: some View {
-        TabedView()
+        TabedView().environmentObject(UserData())
     }
 }

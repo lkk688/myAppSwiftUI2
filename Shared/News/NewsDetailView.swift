@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct NewsDetailView: View {
-    var news: NewsData
+    //var news: NewsData
+    @Binding var news: NewsData
     @State private var zoomed = false
     
     var body: some View {
@@ -38,7 +39,8 @@ struct NewsDetailView: View {
 struct NewsDetailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView{
-            NewsDetailView(news: NewsData.defaultData[1])
+//            NewsDetailView(news: NewsData.defaultData[1])
+            NewsDetailView(news: .constant(NewsData.defaultData[1]))
         }
     }
 }

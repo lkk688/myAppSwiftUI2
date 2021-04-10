@@ -140,7 +140,6 @@
 				6254EA13260A8EE800260E7A /* Model */,
 				6254E9D2260A8CEE00260E7A /* myAppSwiftUI2App.swift */,
 				6254E9D4260A8CEF00260E7A /* Assets.xcassets */,
-				6254EA2A260A9B5700260E7A /* NewsDetailView.swift */,
 				62C5396A261D07F6005D732B /* TabedView.swift */,
 			);
 			path = Shared;
@@ -208,6 +207,7 @@
 			children = (
 				6254E9D3260A8CEE00260E7A /* NewsList.swift */,
 				62C53958261CD80F005D732B /* AddNews.swift */,
+				6254EA2A260A9B5700260E7A /* NewsDetailView.swift */,
 			);
 			path = News;
 			sourceTree = "<group>";

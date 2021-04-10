@@ -8,7 +8,11 @@
 import SwiftUI
 
 struct NewsList: View {
-    var newsdata: [NewsData] = NewsData.defaultData //[]
+    //var newsdata: [NewsData] = NewsData.defaultData //[]
+    @Binding var newsdata: [NewsData]
+    
+    //@State private var addnewsdata = AddNewsData()
+    
     @State private var showingAlert = false
     @State var showSheetView = false
     
@@ -24,7 +28,12 @@ struct NewsList: View {
 //            }
             List{
                 ForEach(newsdata) { news in
-                    NewsCellView(news: news)
+                    NavigationLink(
+                        destination: NewsDetailView(news: binding(for: news)),
+                        label: {
+                            NewsCellView(news: news)
+                        })
+                    //NewsCellView(news: news)
                 }
             }
             .navigationTitle("News")
@@ -41,7 +50,9 @@ struct NewsList: View {
                     Button(action: {self.showingAlert.toggle()}, label: {
                         Image(systemName: "bell.circle.fill")
                     })
-                    Button(action: {self.showSheetView.toggle()}, label: {
+                    Button(action: {
+                        self.showSheetView.toggle()
+                    }, label: {
                         Image(systemName: "pencil.and.outline")
                     })
                 }
@@ -50,10 +61,18 @@ struct NewsList: View {
                 self.alert
             })
             .sheet(isPresented: $showSheetView, content: {
-                AddNews(showSheetView: self.$showSheetView)
+                //AddNews(showSheetView: self.$showSheetView)
+                AddNews(newsdata: $newsdata, showSheetView: self.$showSheetView)
             })
             
         }
+    }
+    
+    private func binding(for news: NewsData) -> Binding<NewsData> {
+        guard let newsIndex = newsdata.firstIndex(where: {$0.id == news.id}) else {
+            fatalError("Cannot find news in array")
+        }
+        return $newsdata[newsIndex]
     }
     
 }
@@ -61,47 +80,53 @@ struct NewsList: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            NewsList(newsdata: NewsData.defaultData)
+//            NewsList(newsdata: NewsData.defaultData)
+//                .previewDevice("iPhone 12 Pro")
+            
+            //change to binding
+            NewsList(newsdata: .constant(NewsData.defaultData))
                 .previewDevice("iPhone 12 Pro")
         }
     }
 }
 
 struct NewsCellView: View {
+    
     var news: NewsData
     var body: some View {
-        NavigationLink(destination: NewsDetailView(news: news)) {
-            //Image(systemName: "photo")
-            Image(uiImage: news.photo ?? UIImage(imageLiteralResourceName: "Spartan"))
-                .resizable()
-                .frame(width: 80.0, height: 80.0)
-                .cornerRadius(8)
-            HStack {
-                
-                VStack(alignment: .leading) {
-                    Text(news.name ?? "No name")
-                        .font(.headline)
+//        NavigationLink(destination: NewsDetailView(news: news)) {
+//
+//        }
+        //Image(systemName: "photo")
+        Image(uiImage: news.photo ?? UIImage(imageLiteralResourceName: "Spartan"))
+            .resizable()
+            .frame(width: 80.0, height: 80.0)
+            .cornerRadius(8)
+        HStack {
+            
+            VStack(alignment: .leading) {
+                Text(news.name ?? "No name")
+                    .font(.headline)
+                    .padding(.leading)
+                    .accessibilityElement(children: .ignore)
+                    .accessibilityLabel(Text("News name"))
+                    .accessibilityValue(Text("\(news.name ?? "No name")"))
+                Text(news.title)
+                    .font(.subheadline)
+                    .multilineTextAlignment(.leading)
+                    .padding(.horizontal)
+                    .foregroundColor(.secondary)
+                Spacer()
+                HStack{
+                    Text(String(repeating: "★", count: news.rating))
                         .padding(.leading)
+                        .foregroundColor(.yellow)
                         .accessibilityElement(children: .ignore)
-                        .accessibilityLabel(Text("News name"))
-                        .accessibilityValue(Text("\(news.name ?? "No name")"))
-                    Text(news.title)
-                        .font(.subheadline)
-                        .multilineTextAlignment(.leading)
-                        .padding(.horizontal)
-                        .foregroundColor(.secondary)
+                        .accessibilityLabel(Text("News rating"))
+                        .accessibilityValue(Text("\(news.rating)"))
                     Spacer()
-                    HStack{
-                        Text(String(repeating: "★", count: news.rating))
-                            .padding(.leading)
-                            .foregroundColor(.yellow)
-                            .accessibilityElement(children: .ignore)
-                            .accessibilityLabel(Text("News rating"))
-                            .accessibilityValue(Text("\(news.rating)"))
-                        Spacer()
-                        Label("\(news.rating)", systemImage:"hand.thumbsup.fill")
-                        Image(systemName: "link.circle")
-                    }
+                    Label("\(news.rating)", systemImage:"hand.thumbsup.fill")
+                    Image(systemName: "link.circle")
                 }
             }
         }
