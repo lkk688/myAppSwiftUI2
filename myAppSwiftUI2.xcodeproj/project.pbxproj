@@ -45,6 +45,8 @@
 		62C539B026257A8A005D732B /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C539AE26257A8A005D732B /* MapView.swift */; };
 		62C539B62625F954005D732B /* MapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C539B52625F954005D732B /* MapModel.swift */; };
 		62C539B72625F954005D732B /* MapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C539B52625F954005D732B /* MapModel.swift */; };
+		62C539BD26263BDF005D732B /* GestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C539BC26263BDF005D732B /* GestureView.swift */; };
+		62C539BE26263BDF005D732B /* GestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C539BC26263BDF005D732B /* GestureView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +96,7 @@
 		62C539A6262534B2005D732B /* MyImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyImage.swift; sourceTree = "<group>"; };
 		62C539AE26257A8A005D732B /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		62C539B52625F954005D732B /* MapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModel.swift; sourceTree = "<group>"; };
+		62C539BC26263BDF005D732B /* GestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +222,7 @@
 				62C53958261CD80F005D732B /* AddNews.swift */,
 				6254EA2A260A9B5700260E7A /* NewsDetailView.swift */,
 				62C539AE26257A8A005D732B /* MapView.swift */,
+				62C539BC26263BDF005D732B /* GestureView.swift */,
 			);
 			path = News;
 			sourceTree = "<group>";
@@ -412,6 +416,7 @@
 				62C539AF26257A8A005D732B /* MapView.swift in Sources */,
 				62C539B62625F954005D732B /* MapModel.swift in Sources */,
 				62C53998261D3332005D732B /* Collection.swift in Sources */,
+				62C539BD26263BDF005D732B /* GestureView.swift in Sources */,
 				62C5396B261D07F6005D732B /* TabedView.swift in Sources */,
 				62C53991261D320F005D732B /* ImagePickView.swift in Sources */,
 				62C5398A261D3175005D732B /* ImagePicker.swift in Sources */,
@@ -435,6 +440,7 @@
 				62C539B026257A8A005D732B /* MapView.swift in Sources */,
 				62C539B72625F954005D732B /* MapModel.swift in Sources */,
 				62C53999261D3332005D732B /* Collection.swift in Sources */,
+				62C539BE26263BDF005D732B /* GestureView.swift in Sources */,
 				62C5396C261D07F6005D732B /* TabedView.swift in Sources */,
 				62C53992261D320F005D732B /* ImagePickView.swift in Sources */,
 				62C5398B261D3175005D732B /* ImagePicker.swift in Sources */,

@@ -77,7 +77,7 @@ struct NewsDetailView: View {
             
             Spacer()
         }
-        .navigationTitle(news.name ?? "No name")
+        .navigationBarTitle(news.name ?? "No name", displayMode: .inline)
         .fullScreenCover(isPresented: $ismapviewPresented, content: {
             NavigationView{
                 MapView(mapmodel: mapmodel)
