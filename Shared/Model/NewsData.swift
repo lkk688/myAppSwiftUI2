@@ -11,15 +11,6 @@ import UIKit
 import MapKit
 import os.log
 
-//CLLocationCoordinate2D is neither Codable nor Hashable. This means we can’t use a Core Location coordinate as key in a dictionary
-struct Coordinate: Codable, Hashable {
-    let latitude, longitude: Double
-//    enum CodingKeys: String, CodingKey {
-//            case latitude = "latitude"
-//            case longitude = "longitude"
-//        }
-}
-
 class NewsData: Identifiable, Codable {
     
     //MARK: Properties

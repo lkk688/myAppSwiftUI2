@@ -17,12 +17,16 @@ struct MapView: View {
     var body: some View {
         
         //
-        //Map(coordinateRegion: $mapmodel.region, showsUserLocation: true, userTrackingMode: .constant(.follow))
-        Map(coordinateRegion: $mapmodel.region, annotationItems: mapmodel.points) { item in
-            MapMarker(coordinate: item.coordinate, tint: .red)
+        if mapmodel.currentlocation == true {
+            Map(coordinateRegion: $mapmodel.region, showsUserLocation: true, userTrackingMode: .constant(.follow))
+        }else{
+            Map(coordinateRegion: $mapmodel.region, annotationItems: mapmodel.points) { item in
+                MapMarker(coordinate: item.coordinate, tint: .red)
+            }
+                        //.edgesIgnoringSafeArea(.all)
+                                //.frame(width: 400, height: 300)
         }
-            //.edgesIgnoringSafeArea(.all)
-                    //.frame(width: 400, height: 300)
+
     }
 }
 

@@ -19,6 +19,8 @@ class MapModel: ObservableObject {
     @Published var region: MKCoordinateRegion
     @Published var points: [AnnotatedItem] = []
     
+    var currentlocation: Bool = false
+    
     static var pointsOfInterest = [
         AnnotatedItem(name: "Times Square", coordinate: .init(latitude: 40.75773, longitude: -73.985708)),
         AnnotatedItem(name: "Flatiron Building", coordinate: .init(latitude: 40.741112, longitude: -73.989723)),

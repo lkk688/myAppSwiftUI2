@@ -47,6 +47,10 @@
 		62C539B72625F954005D732B /* MapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C539B52625F954005D732B /* MapModel.swift */; };
 		62C539BD26263BDF005D732B /* GestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C539BC26263BDF005D732B /* GestureView.swift */; };
 		62C539BE26263BDF005D732B /* GestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C539BC26263BDF005D732B /* GestureView.swift */; };
+		62C539C526264173005D732B /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C539C426264173005D732B /* LocationViewModel.swift */; };
+		62C539C626264173005D732B /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C539C426264173005D732B /* LocationViewModel.swift */; };
+		62C539D026264261005D732B /* CurrentLocationMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C539CF26264261005D732B /* CurrentLocationMapView.swift */; };
+		62C539D126264261005D732B /* CurrentLocationMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C539CF26264261005D732B /* CurrentLocationMapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +101,8 @@
 		62C539AE26257A8A005D732B /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		62C539B52625F954005D732B /* MapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModel.swift; sourceTree = "<group>"; };
 		62C539BC26263BDF005D732B /* GestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureView.swift; sourceTree = "<group>"; };
+		62C539C426264173005D732B /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
+		62C539CF26264261005D732B /* CurrentLocationMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationMapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +152,7 @@
 		6254E9D1260A8CEE00260E7A /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				62C539C326263E82005D732B /* Location */,
 				62C53988261D3164005D732B /* Image */,
 				62C53978261D16C2005D732B /* Profile */,
 				62C53957261CD7F6005D732B /* News */,
@@ -221,7 +228,6 @@
 				6254E9D3260A8CEE00260E7A /* NewsList.swift */,
 				62C53958261CD80F005D732B /* AddNews.swift */,
 				6254EA2A260A9B5700260E7A /* NewsDetailView.swift */,
-				62C539AE26257A8A005D732B /* MapView.swift */,
 				62C539BC26263BDF005D732B /* GestureView.swift */,
 			);
 			path = News;
@@ -245,6 +251,16 @@
 				62C539A6262534B2005D732B /* MyImage.swift */,
 			);
 			path = Image;
+			sourceTree = "<group>";
+		};
+		62C539C326263E82005D732B /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				62C539C426264173005D732B /* LocationViewModel.swift */,
+				62C539AE26257A8A005D732B /* MapView.swift */,
+				62C539CF26264261005D732B /* CurrentLocationMapView.swift */,
+			);
+			path = Location;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -413,8 +429,10 @@
 				6254E9FB260A8CEF00260E7A /* myAppSwiftUI2App.swift in Sources */,
 				6254EA2B260A9B5700260E7A /* NewsDetailView.swift in Sources */,
 				62C5394D261CD713005D732B /* UserData.swift in Sources */,
+				62C539C526264173005D732B /* LocationViewModel.swift in Sources */,
 				62C539AF26257A8A005D732B /* MapView.swift in Sources */,
 				62C539B62625F954005D732B /* MapModel.swift in Sources */,
+				62C539D026264261005D732B /* CurrentLocationMapView.swift in Sources */,
 				62C53998261D3332005D732B /* Collection.swift in Sources */,
 				62C539BD26263BDF005D732B /* GestureView.swift in Sources */,
 				62C5396B261D07F6005D732B /* TabedView.swift in Sources */,
@@ -437,8 +455,10 @@
 				6254E9FC260A8CEF00260E7A /* myAppSwiftUI2App.swift in Sources */,
 				6254EA2C260A9B5700260E7A /* NewsDetailView.swift in Sources */,
 				62C5394E261CD713005D732B /* UserData.swift in Sources */,
+				62C539C626264173005D732B /* LocationViewModel.swift in Sources */,
 				62C539B026257A8A005D732B /* MapView.swift in Sources */,
 				62C539B72625F954005D732B /* MapModel.swift in Sources */,
+				62C539D126264261005D732B /* CurrentLocationMapView.swift in Sources */,
 				62C53999261D3332005D732B /* Collection.swift in Sources */,
 				62C539BE26263BDF005D732B /* GestureView.swift in Sources */,
 				62C5396C261D07F6005D732B /* TabedView.swift in Sources */,
