@@ -21,17 +21,18 @@ struct AddNewsData {
     var myPlacement: UnitPoint = UnitPoint(x: 0, y: 0)
 }
 
-enum Category: String, CaseIterable, Hashable, Identifiable {
+enum Category: String, CaseIterable, Hashable, Identifiable, Codable {
     case emergency = "Emergency"
     case breakingnews = "Breaking News"
     case business = "Business"
     case technology = "Technology"
     case life = "Life"
+    case general = "general"
 
     var id: Category {self}
 }
 
-enum Building: String, CaseIterable, Hashable, Identifiable {
+enum Building: String, CaseIterable, Hashable, Identifiable, Codable {
     case engineering = "Engineering Building"
     case studentunion = "Student Union"
     case parking = "Parking Garage"

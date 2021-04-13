@@ -30,7 +30,10 @@ class NewsData: Identifiable, Codable {
     var photo: String? //UIImage? //String? //UIImage?
     var rating: Int
     var weblink: URL?
+    var authorphoto: String?
+    var category: Category?
     var coordinate: Coordinate? //CLLocationCoordinate2D?
+    var isFeatured: Bool
 
 //
 //    static func saveMyData(mydata: [NewsData]) {
@@ -59,7 +62,7 @@ class NewsData: Identifiable, Codable {
 //    static let ArchiveURL = DocumentsDirectory.appendingPathComponent("MyModelData")
     
     
-    init?(id: UUID = UUID(), title: String, name: String?, story: String?, photo: String?, rating: Int, weblink: URL?, coordinate: Coordinate?) {
+    init?(id: UUID = UUID(), title: String, name: String?, story: String?, photo: String?, rating: Int, weblink: URL?, coordinate: Coordinate?, authorphoto: String? = "Spartan", category: Category? = .general, isFeatured: Bool = false) {
         // Initialization should fail if there is no name or if the rating is negative.
 //        if name.isEmpty || rating < 0  {
 //            return nil
@@ -82,6 +85,9 @@ class NewsData: Identifiable, Codable {
         self.rating = rating
         self.weblink = weblink
         self.coordinate = coordinate
+        self.authorphoto = authorphoto
+        self.category = category
+        self.isFeatured = isFeatured
     }
     
     // MARK: - Support for loading data

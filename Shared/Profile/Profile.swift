@@ -14,10 +14,30 @@ struct Profile: View {
     //@ObservedObject var currentuser = UserData() //testUser
     
     @EnvironmentObject var currentuser: UserData
+    @Environment(\.editMode) var mode
     
     var body: some View {
-        //ProfileSummary(profile:currentuser.profile)
-        ProfileEditor(currentuser: currentuser)
+        VStack(alignment: .leading, spacing: 20) {
+            HStack {
+                if self.mode?.wrappedValue == .active {
+                    Button("Cancel") {
+                        self.mode?.animation().wrappedValue = .inactive
+                    }
+                }
+                
+                Spacer()
+                
+                EditButton()
+                    .padding(.horizontal) //SwiftUI builtin
+            }
+            if self.mode?.wrappedValue == .inactive {
+                ProfileSummary(profile: currentuser.profile)
+            } else {
+                ProfileEditor(currentuser: currentuser)
+            }
+            //ProfileSummary(profile:currentuser.profile)
+            //ProfileEditor(currentuser: currentuser)
+        }
     }
 }
 

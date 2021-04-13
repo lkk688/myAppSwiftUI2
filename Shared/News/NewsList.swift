@@ -137,7 +137,11 @@ struct NewsCellView: View {
                         .accessibilityLabel(Text("News rating"))
                         .accessibilityValue(Text("\(news.rating)"))
                     Spacer()
-                    Label("\(news.rating)", systemImage:"hand.thumbsup.fill")
+                    
+                    if (news.isFeatured == true) {
+//                        Label("\(news.rating)", systemImage:"hand.thumbsup.fill").padding()
+                        Image(systemName: "hand.thumbsup.fill").foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+                    }
                     Image(systemName: "link.circle")
                 }
             }
