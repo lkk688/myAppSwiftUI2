@@ -12,6 +12,9 @@ struct NewsDetailView: View {
     @Binding var news: NewsData
     @State private var zoomed = false
     
+    @StateObject var mapmodel = MapModel()//(coordinate: news.coordinate)
+    @State private var ismapviewPresented = false
+    
     var body: some View {
         VStack{
             //?? UIImage(imageLiteralResourceName: "Spartan")
@@ -29,8 +32,22 @@ struct NewsDetailView: View {
                 .background(Color.red)
                 .foregroundColor(Color.white)
                 .font(Font.headline.smallCaps())
-            
+            Button(action: {
+                mapmodel.update(name: news.name, coordinate: news.coordinate)
+                ismapviewPresented = true
+            }, label: {
+                Text("Show map")
+            })
         }.navigationTitle(news.name ?? "No name")
+        .fullScreenCover(isPresented: $ismapviewPresented, content: {
+            NavigationView{
+                MapView(mapmodel: mapmodel)
+                    .navigationTitle(news.name ?? "")
+                    .navigationBarItems(trailing: Button("Done"){
+                        ismapviewPresented = false
+                    })
+            }
+        })
         
         
         

@@ -87,17 +87,14 @@ class NewsData: Identifiable, Codable {
     // MARK: - Support for loading data
     static var defaultData: [NewsData] = {
         //load the data
-//        if let savedData = loadMyDatafromArchive() {
-//            return savedData
-//        }
-//        if let localData = loadDataFromPlistNamed("localdata"){
-//            return localData
-//        }
+        if let localData = loadDataFromPlistNamed("localdata"){
+            return localData
+        }
 //        else
 //        {
 //            return loadDataFromCode()
 //        }
-//        //return loadDataFromPlistNamed("localdata")
+//      return loadDataFromPlistNamed("localdata")
         return loadDataFromCode()
     }()
     

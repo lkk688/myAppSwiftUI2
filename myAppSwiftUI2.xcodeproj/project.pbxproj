@@ -41,6 +41,10 @@
 		62C53999261D3332005D732B /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C53997261D3332005D732B /* Collection.swift */; };
 		62C539A7262534B2005D732B /* MyImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C539A6262534B2005D732B /* MyImage.swift */; };
 		62C539A8262534B2005D732B /* MyImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C539A6262534B2005D732B /* MyImage.swift */; };
+		62C539AF26257A8A005D732B /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C539AE26257A8A005D732B /* MapView.swift */; };
+		62C539B026257A8A005D732B /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C539AE26257A8A005D732B /* MapView.swift */; };
+		62C539B62625F954005D732B /* MapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C539B52625F954005D732B /* MapModel.swift */; };
+		62C539B72625F954005D732B /* MapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C539B52625F954005D732B /* MapModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +92,8 @@
 		62C53990261D320F005D732B /* ImagePickView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickView.swift; sourceTree = "<group>"; };
 		62C53997261D3332005D732B /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
 		62C539A6262534B2005D732B /* MyImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyImage.swift; sourceTree = "<group>"; };
+		62C539AE26257A8A005D732B /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		62C539B52625F954005D732B /* MapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +207,7 @@
 				6254EA15260A8EE800260E7A /* localdata.plist */,
 				62C5394C261CD713005D732B /* UserData.swift */,
 				62C53963261CEB6E005D732B /* AddNewsData.swift */,
+				62C539B52625F954005D732B /* MapModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -211,6 +218,7 @@
 				6254E9D3260A8CEE00260E7A /* NewsList.swift */,
 				62C53958261CD80F005D732B /* AddNews.swift */,
 				6254EA2A260A9B5700260E7A /* NewsDetailView.swift */,
+				62C539AE26257A8A005D732B /* MapView.swift */,
 			);
 			path = News;
 			sourceTree = "<group>";
@@ -401,6 +409,8 @@
 				6254E9FB260A8CEF00260E7A /* myAppSwiftUI2App.swift in Sources */,
 				6254EA2B260A9B5700260E7A /* NewsDetailView.swift in Sources */,
 				62C5394D261CD713005D732B /* UserData.swift in Sources */,
+				62C539AF26257A8A005D732B /* MapView.swift in Sources */,
+				62C539B62625F954005D732B /* MapModel.swift in Sources */,
 				62C53998261D3332005D732B /* Collection.swift in Sources */,
 				62C5396B261D07F6005D732B /* TabedView.swift in Sources */,
 				62C53991261D320F005D732B /* ImagePickView.swift in Sources */,
@@ -422,6 +432,8 @@
 				6254E9FC260A8CEF00260E7A /* myAppSwiftUI2App.swift in Sources */,
 				6254EA2C260A9B5700260E7A /* NewsDetailView.swift in Sources */,
 				62C5394E261CD713005D732B /* UserData.swift in Sources */,
+				62C539B026257A8A005D732B /* MapView.swift in Sources */,
+				62C539B72625F954005D732B /* MapModel.swift in Sources */,
 				62C53999261D3332005D732B /* Collection.swift in Sources */,
 				62C5396C261D07F6005D732B /* TabedView.swift in Sources */,
 				62C53992261D320F005D732B /* ImagePickView.swift in Sources */,
