@@ -37,7 +37,11 @@ struct NewsList: View {
                             NewsCellView(news: news)
                         })
                     //NewsCellView(news: news)
-                }
+                }.onDelete(perform: { indexSet in
+                    print("Delete Row")
+                    newsdata.remove(atOffsets: indexSet)
+                    saveAction() //external block
+                })
             }
             .navigationTitle("News")
 //            .navigationBarItems(trailing: Button(action: {self.showingAlert.toggle()}) {
