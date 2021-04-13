@@ -16,6 +16,9 @@ struct NewsList: View {
     @State private var showingAlert = false
     @State var showSheetView = false
     
+    @Environment(\.scenePhase) private var scenePhase
+    let saveAction: () -> Void
+    
     var alert: Alert {
         Alert(title:Text("+ Confirmed"), message: Text("Thank you"), dismissButton: .default(Text("OK")))
     }
@@ -64,6 +67,11 @@ struct NewsList: View {
                 //AddNews(showSheetView: self.$showSheetView)
                 AddNews(newsdata: $newsdata, showSheetView: self.$showSheetView)
             })
+            .onChange(of: scenePhase, perform: { phase in
+                if phase == .inactive {
+                    saveAction() //external block
+                }
+            })
             
         }
     }
@@ -84,7 +92,7 @@ struct ContentView_Previews: PreviewProvider {
 //                .previewDevice("iPhone 12 Pro")
             
             //change to binding
-            NewsList(newsdata: .constant(NewsData.defaultData))
+            NewsList(newsdata: .constant(NewsData.defaultData), saveAction: {})
                 .previewDevice("iPhone 12 Pro")
         }
     }
@@ -97,8 +105,8 @@ struct NewsCellView: View {
 //        NavigationLink(destination: NewsDetailView(news: news)) {
 //
 //        }
-        //Image(systemName: "photo")
-        Image(uiImage: news.photo ?? UIImage(imageLiteralResourceName: "Spartan"))
+        //?? UIImage(imageLiteralResourceName: "Spartan")
+        Image(uiImage: MyImage.retrieveImage(forKey: news.photo))
             .resizable()
             .frame(width: 80.0, height: 80.0)
             .cornerRadius(8)

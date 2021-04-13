@@ -13,7 +13,7 @@ struct TabedView: View {
     @State private var tabSelected = 0
     var body: some View {
         TabView(selection: $tabSelected) {
-            NewsList(newsdata: $currentuser.newsdata)
+            NewsList(newsdata: $currentuser.newsdata, saveAction: {currentuser.save()})
                 .tabItem {
                     Image(systemName: (tabSelected == 0 ? "newspaper" : "newspaper.fill") )
                     Text("News")

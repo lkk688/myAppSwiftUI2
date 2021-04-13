@@ -77,7 +77,7 @@ struct AddNews: View {
             .navigationTitle("Post your news")
             .navigationBarItems(trailing: Button(action: {
                 print("Saving new data, Dismissing sheet view...")
-                let creatednewdata = NewsData.init(identifier: 1, title: addnews.title, name: addnews.name, story: addnews.story, photo: nil, rating: addnews.rating, weblink: nil, coordinate: nil)
+                let creatednewdata = NewsData.init(title: addnews.title, name: addnews.name, story: addnews.story, photo: nil, rating: addnews.rating, weblink: nil, coordinate: nil)
                 if creatednewdata != nil {
                     newsdata.append(creatednewdata!)
                 }

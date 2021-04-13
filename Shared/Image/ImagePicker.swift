@@ -60,7 +60,7 @@ struct ImagePicker: UIViewControllerRepresentable {
             return
           }
 
-          print(uiImage)
+          //print(uiImage)
           self.parent.completion(uiImage)
         }
       }

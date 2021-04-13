@@ -14,6 +14,9 @@ struct myAppSwiftUI2App: App {
         WindowGroup {
             //NewsList()
             TabedView().environmentObject(userdata)
+                .onAppear{
+                    userdata.load()
+                }
             //Profile(currentuser: userdata)
         }
     }

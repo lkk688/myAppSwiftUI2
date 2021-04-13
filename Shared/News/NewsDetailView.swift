@@ -14,7 +14,8 @@ struct NewsDetailView: View {
     
     var body: some View {
         VStack{
-            Image(uiImage: news.photo ?? UIImage(imageLiteralResourceName: "Spartan"))
+            //?? UIImage(imageLiteralResourceName: "Spartan")
+            Image(uiImage: MyImage.retrieveImage(forKey: news.photo) )
                 .resizable()
                 .aspectRatio(contentMode: zoomed ? .fill : .fit)
                 .edgesIgnoringSafeArea(.top)
