@@ -30,8 +30,8 @@ struct TabedView: View {
                 }.tag(2)
             CurrentLocationMapView()
                 .tabItem {
-                    Image(systemName: (tabSelected == 3 ? "photo" : "photo.fill") )
-                    Text("location.circle")
+                    Image(systemName: (tabSelected == 3 ? "location.circle" : "location.circle.fill") )
+                    Text("Location")
                 }.tag(3)
         }
     }

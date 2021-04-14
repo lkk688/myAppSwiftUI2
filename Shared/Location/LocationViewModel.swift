@@ -58,6 +58,28 @@ class LocationViewModel: NSObject, ObservableObject{
             }
         })
     }
+    //typealias LocationNameResultType = Result<String, Error>
+    func getCityName(completion: @escaping (Result<String, Error>) -> Void) {
+        guard let location = location else {
+            completion(.failure(LocationServiceErrors.locationNil))
+            return
+        }
+        
+        let geocoder = CLGeocoder()
+        geocoder.reverseGeocodeLocation(location) { (placemarks, error) in
+            if let error = error {
+                completion(.failure(error))
+            }
+            //placemark.locality
+            guard let placemark = placemarks?.first,
+                  let cityName = placemark.name else {
+                completion(.failure(LocationServiceErrors.placeMarkNil))
+                return
+            }
+            
+            completion(.success(cityName))
+        }
+    }
     
     func startLocationUpdate(){
         self.locationManager.startUpdatingLocation()
@@ -92,5 +114,24 @@ extension LocationViewModel: CLLocationManagerDelegate {
         //self.mapmodel.update(name: "current location", coordinate: userlocation)
         
         self.geocode()
+    }
+}
+
+enum LocationServiceErrors: LocalizedError {
+    case userDeniedWhenInUseAuthorization
+    case locationNil
+    case placeMarkNil
+    
+    var errorDescription: String? {
+        switch self {
+        case .userDeniedWhenInUseAuthorization:
+            return "You've denied location authorization".localized()
+            
+        case .locationNil:
+            return "Something goes wrong.".localized()
+            
+        case .placeMarkNil:
+            return "Can't get location name"
+        }
     }
 }

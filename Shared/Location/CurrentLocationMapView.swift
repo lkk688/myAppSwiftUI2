@@ -10,14 +10,28 @@ import SwiftUI
 struct CurrentLocationMapView: View {
     @StateObject var locationViewModel = LocationViewModel()
     
+    @StateObject var weatherNetworkModel = WeatherNetworkModel()
+    
     var body: some View {
         VStack{
             MapView(mapmodel: locationViewModel.mapmodel)
-            Text("Location updating: \(locationViewModel.isUpdating.description)")
-            Text("Current place: \(locationViewModel.placemark?.description ?? "")")
+            Text("Location updating: \(locationViewModel.isUpdating.description)").padding()
+//            Text("Current place: \(locationViewModel.placemark?.description ?? "")").padding()
+            Text("Current place: \(locationViewModel.placemark?.name ?? "")").padding()
+            Text("Current weather: \(weatherNetworkModel.weather)").padding()
             HStack{
                 Button("Start Location") {
-                    locationViewModel.startLocationUpdate()
+                    //locationViewModel.startLocationUpdate()
+                    locationViewModel.getCityName(completion: {result in
+                        switch result {
+                        case let .success(locationName):
+                            print(locationName)
+                        case .failure:
+                            print("Did not get city name")
+                        }
+                    })
+//                    weatherNetworkModel.getWeather(querycity: locationViewModel.placemark?.name ?? "San Jose,CA")
+                    weatherNetworkModel.requestCurrentWeather(querycity: "Atlanta,us")
                 }
                 Button("Stop Location") {
                     locationViewModel.stopLocationUpdate()
@@ -30,6 +44,8 @@ struct CurrentLocationMapView: View {
 //                }
                 
             }
+        }.onAppear{
+            locationViewModel.startLocationUpdate()
         }
     }
 }
