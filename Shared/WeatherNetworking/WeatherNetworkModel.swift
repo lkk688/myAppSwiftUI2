@@ -10,7 +10,7 @@ import Combine
 import CoreLocation
 
 class WeatherNetworkModel: ObservableObject {
-    //@Published var city: String = "Atlanta,us"
+    @Published var city: String = ""//Atlanta,us"
     @Published var weatherresponse: OneWeatherAPIResponse?
     @Published var weather: String = ""
     
@@ -26,9 +26,19 @@ class WeatherNetworkModel: ObservableObject {
     
     private let session: URLSession
     
-    init(session: URLSession = .shared) //The shared singleton session object. For basic requests, the URLSession class provides a shared singleton session object that gives you a reasonable default behavior for creating tasks.
+    init(session: URLSession = .shared,//The shared singleton session object. For basic requests, the URLSession class provides a shared singleton session object that gives you a reasonable default behavior for creating tasks.
+         scheduler: DispatchQueue = DispatchQueue(label: "WeatherNetworkModel"))
     {
         self.session = session
+        
+        //search city textfield
+        $city
+            .dropFirst(1) //As soon as you create the observation, $city emits its first value. Since the first value is an empty string, you need to skip it to avoid an unintended network call.
+            .debounce(for: .seconds(1), scheduler: scheduler) //debounce works by waiting a second until the user stops typing
+            .removeDuplicates()
+            .filter{ $0.count >= 1 }
+            .sink(receiveValue: requestCurrentWeather(querycity:)) //You observe these events via sink(receiveValue:) and handle them with requestCurrentWeather(querycity:)
+            .store(in: &bag)
     }
     
     func getWeather(querycity: String)
@@ -131,7 +141,7 @@ class WeatherNetworkModel: ObservableObject {
                 receiveValue: { [weak self] weather in
                     //self?.weather = "Temperature \(posts.main.temperature)°C Humidity \(posts.main.humidity)% ."//weather
                     print(weather)
-                    self?.weather = "Combine Temperature \(weather.main.temperature)°C Humidity \(weather.main.humidity)% ."
+                    self?.weather = "CombineCity Temperature \(weather.main.temperature)°C Humidity \(weather.main.humidity)% ."
                 }
             )
             .store(in: &bag)
