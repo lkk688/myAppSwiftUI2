@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  myAppSwiftUI2
+
+  Created by Kaikai Liu on 4/18/21.
+  
+*/
+// MARK: - Weather
+"Weather" = "Weather";
+"Getting your location" = "Getting your location";
+"Can't get your location name" = "Can't get your location name";
+"Current weather" = "Current weather";
+"Hourly" = "Hourly";
+"Daily" = "Daily";

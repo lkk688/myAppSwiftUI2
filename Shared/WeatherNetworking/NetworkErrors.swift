@@ -43,12 +43,21 @@ enum APIProviderErrors: LocalizedError {
     }
 }
 
-extension String {
-    func capitalizeFirstLetter() -> String {
-        return prefix(1).uppercased() + dropFirst()
-    }
+enum WeatherServiceErrors: LocalizedError {
+    case userDeniedWhenInUseAuthorization
+    case locationNil
+    case placeMarkNil
     
-    func localized() -> String {
-        return NSLocalizedString(self, comment: "")
+    var errorDescription: String? {
+        switch self {
+        case .userDeniedWhenInUseAuthorization:
+            return "You've denied location authorization".localized()
+            
+        case .locationNil:
+            return "Something goes wrong.".localized()
+            
+        case .placeMarkNil:
+            return "Can't get location name"
+        }
     }
 }

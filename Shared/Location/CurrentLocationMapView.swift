@@ -22,16 +22,10 @@ struct CurrentLocationMapView: View {
             HStack{
                 Button("Start Location") {
                     //locationViewModel.startLocationUpdate()
-                    locationViewModel.getCityName(completion: {result in
-                        switch result {
-                        case let .success(locationName):
-                            print(locationName)
-                        case .failure:
-                            print("Did not get city name")
-                        }
-                    })
 //                    weatherNetworkModel.getWeather(querycity: locationViewModel.placemark?.name ?? "San Jose,CA")
-                    weatherNetworkModel.requestCurrentWeather(querycity: "Atlanta,us")
+//                    weatherNetworkModel.requestCurrentWeather(querycity: "Atlanta,us")
+                    
+                    weatherNetworkModel.requestCurrentLocationWeather()
                 }
                 Button("Stop Location") {
                     locationViewModel.stopLocationUpdate()
