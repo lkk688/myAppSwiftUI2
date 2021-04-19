@@ -40,15 +40,18 @@ struct CurrentLocationMapView: View {
                 HStack{
                     Text("Search Weather")
                     
-                    TextField("Search other cities, e.g. Cupertino", text: $weatherNetworkModel.city, onEditingChanged: { (changed) in
-                        print("City onEditingChanged - \(changed)")
-                        //gets called when user taps on the TextField or taps return. The changed value is set to true when user taps on the TextField and it’s set to false when user taps return.
-                    }) {
-                        //The onCommit callback gets called when user taps return.
-                        print("City onCommit")
-                        //self.viewModel.fetchWeather(forCity: self.viewModel.city)
+                    ZStack{
+                        TextField("Search other cities, e.g. Cupertino", text: $weatherNetworkModel.city, onEditingChanged: { (changed) in
+                            print("City onEditingChanged - \(changed)")
+                            //gets called when user taps on the TextField or taps return. The changed value is set to true when user taps on the TextField and it’s set to false when user taps return.
+                        }) {
+                            //The onCommit callback gets called when user taps return.
+                            print("City onCommit")
+                            //self.viewModel.fetchWeather(forCity: self.viewModel.city)
+                        }
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        ActivityIndicator(shouldAnimate: $weatherNetworkModel.activityshouldAnimate)
                     }
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
                 }
                 //Display current weather for the searched city
                 Text("The weather for City \(weatherNetworkModel.city) is \(weatherNetworkModel.weather)").padding()

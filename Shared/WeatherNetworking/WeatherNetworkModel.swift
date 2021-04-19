@@ -13,6 +13,7 @@ class WeatherNetworkModel: ObservableObject {
     @Published var city: String = ""//Atlanta,us"
     @Published var weatherresponse: OneWeatherAPIResponse?
     @Published var weather: String = ""
+    @Published var activityshouldAnimate = false//false
     
     private let locationManager = CLLocationManager()
     private lazy var location: CLLocation? = locationManager.location
@@ -130,13 +131,26 @@ class WeatherNetworkModel: ObservableObject {
     }
     
     func requestCurrentWeather(querycity: String) {
+        DispatchQueue.main.async {
+            // update ui here
+            self.activityshouldAnimate = true
+        }
         return self.getWeatherCombine(querycity: querycity)
             .decode(type: CurrentWeatherForecastResponse.self, decoder: WeatherNetworkModel.weatherJSONDecoder)
             .receive(on: RunLoop.main)
             .sink(
-                receiveCompletion: { _ in //[weak self]
+                receiveCompletion: { [weak self] value in //[weak self]
                     //self?.weather = "receiveCompletion"
                     print("receiveCompletion")
+                    guard let self = self else { return }
+                    switch value {
+                        case .failure:
+                            self.weather = "Not available"
+                            self.activityshouldAnimate = false
+                        case .finished:
+                            self.activityshouldAnimate = false
+                            break
+                    }
                 },
                 receiveValue: { [weak self] weather in
                     //self?.weather = "Temperature \(posts.main.temperature)°C Humidity \(posts.main.humidity)% ."//weather

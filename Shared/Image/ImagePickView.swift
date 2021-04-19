@@ -14,6 +14,8 @@ struct ImageListItem: Hashable, Equatable, Identifiable {
 }
 
 struct ImagePickView: View {
+    let urls = ["https://www.sjsu.edu/_images/sjsu-homepage-hero/040121_Homepage-ASD-2021_Top_IMG_04.jpg","https://blogs.sjsu.edu/newsroom/files/2015/09/Schmitz_GeneralCampus_7631_1_02-rprer4.jpg","https://blogs.sjsu.edu/newsroom/files/2021/02/strategic-plan-jduarte-031319-19.jpg"]
+    
     @State var images: [ImageListItem] = [
         ImageListItem(id: 1, image: UIImage(named: "Image1")!),
         ImageListItem(id: 2, image: UIImage(named: "Image2")!),
@@ -43,12 +45,27 @@ struct ImagePickView: View {
                   }
                 }
 
-                Collection(data: images, cols: 3, spacing: 4) { data, _ in
+                Collection(data: images, cols: 3, spacing: 2) { data, _ in
                   Image(uiImage: data.image)
                     .resizable()
                     .aspectRatio(1, contentMode: .fit)
                 }
-              }.navigationBarTitle("PHPicker App", displayMode: .inline).padding()
+                
+                //Get remote image
+                VStack{
+                    
+//                    RemoteImageView(url: URL(string: "https://www.sjsu.edu/_images/sjsu-homepage-hero/040121_Homepage-ASD-2021_Top_IMG_04.jpg")!)
+                    
+                    ScrollView { //
+                        ForEach(urls, id: \.self) {url in
+                            RemoteImageView(url: URL(string: url)!)
+                        }
+                    }
+                }
+                
+                Spacer()
+                
+              }.navigationBarTitle("Photo", displayMode: .inline).padding()
             }
           }
 }
