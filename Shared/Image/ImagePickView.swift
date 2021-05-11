@@ -14,6 +14,8 @@ struct ImageListItem: Hashable, Equatable, Identifiable {
 }
 
 struct ImagePickView: View {
+    @StateObject var coremlclassification = CoreMLClassification.shared
+    
     let urls = ["https://www.sjsu.edu/_images/sjsu-homepage-hero/040121_Homepage-ASD-2021_Top_IMG_04.jpg","https://blogs.sjsu.edu/newsroom/files/2015/09/Schmitz_GeneralCampus_7631_1_02-rprer4.jpg","https://blogs.sjsu.edu/newsroom/files/2021/02/strategic-plan-jduarte-031319-19.jpg"]
     
     @State var images: [ImageListItem] = [
@@ -22,6 +24,9 @@ struct ImagePickView: View {
         ImageListItem(id: 3, image: UIImage(named: "Image3")!),
       ]
     @State var showPhotoLibrary = false
+    
+    @State var showCameraview = false
+    
     var pickerConfiguration: PHPickerConfiguration {
         var config = PHPickerConfiguration(photoLibrary: PHPhotoLibrary.shared())
         config.filter = .images
@@ -31,19 +36,28 @@ struct ImagePickView: View {
     
     var body: some View {
         NavigationView {
-              VStack {
+            VStack {
                 HStack {
-                  Button(action: {
-                    showPhotoLibrary = true
-                  }) {
-                    Text("Add photos")
-                  }
-                  Spacer()
+                    Button(action: {
+                        showPhotoLibrary = true
+                    }) {
+                        Text("Add photos")
+                    }
+                    Spacer()
+                    Button(action: {
+                        showCameraview = true
+                    }) {
+                        Text("Open Camera")
+                    }
+                    
                 }.sheet(isPresented: $showPhotoLibrary) {
                   ImagePicker(configuration: pickerConfiguration) { selectedImage in
                     images.append(ImageListItem(id: images.count + 1, image: selectedImage))
+                    coremlclassification.updateClassifications(for: selectedImage)
                   }
                 }
+                
+                Text("Classification result: \(coremlclassification.text ?? "")").padding()
 
                 Collection(data: images, cols: 3, spacing: 2) { data, _ in
                   Image(uiImage: data.image)
@@ -66,8 +80,11 @@ struct ImagePickView: View {
                 Spacer()
                 
               }.navigationBarTitle("Photo", displayMode: .inline).padding()
-            }
-          }
+        }
+        .sheet(isPresented: self.$showCameraview, content: {
+            CameraView(isShown: self.$showCameraview)
+        })
+    }
 }
 
 struct ImagePickView_Previews: PreviewProvider {

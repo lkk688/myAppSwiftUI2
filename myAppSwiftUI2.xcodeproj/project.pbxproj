@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		62102CCB264AFBCF0003233A /* MyImageClassifier1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 62102CCA264AFBCF0003233A /* MyImageClassifier1.mlmodel */; };
+		62102CCF264AFE450003233A /* CoreMLClassification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62102CCE264AFE450003233A /* CoreMLClassification.swift */; };
+		62102CD1264B0C270003233A /* MobileNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 62102CD0264B0C270003233A /* MobileNet.mlmodel */; };
+		62102CD3264B15050003233A /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62102CD2264B15050003233A /* CameraView.swift */; };
+		62102CD5264B15640003233A /* CameraCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62102CD4264B15640003233A /* CameraCoordinator.swift */; };
+		62102CD7264B15920003233A /* VisionProcessingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62102CD6264B15920003233A /* VisionProcessingCoordinator.swift */; };
+		62102CD9264B167B0003233A /* ObjectDetector.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 62102CD8264B167B0003233A /* ObjectDetector.mlmodel */; };
 		6254E9EE260A8CEF00260E7A /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6254E9ED260A8CEF00260E7A /* Tests_iOS.swift */; };
 		6254E9F9260A8CEF00260E7A /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6254E9F8260A8CEF00260E7A /* Tests_macOS.swift */; };
 		6254E9FB260A8CEF00260E7A /* myAppSwiftUI2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6254E9D2260A8CEE00260E7A /* myAppSwiftUI2App.swift */; };
@@ -64,6 +71,8 @@
 		62C59780262CF77000577E94 /* AsyncRemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C5977F262CF77000577E94 /* AsyncRemoteImage.swift */; };
 		62C59786262CF8A200577E94 /* RemoteImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C59785262CF8A200577E94 /* RemoteImageView.swift */; };
 		62C5978C262CFAED00577E94 /* AsyncImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C5978B262CFAED00577E94 /* AsyncImageCache.swift */; };
+		62C59797262D0FC100577E94 /* NetworkAPIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C59796262D0FC100577E94 /* NetworkAPIProvider.swift */; };
+		62C597A1262D10CE00577E94 /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C597A0262D10CE00577E94 /* WeatherAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +93,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		62102CCA264AFBCF0003233A /* MyImageClassifier1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MyImageClassifier1.mlmodel; sourceTree = "<group>"; };
+		62102CCE264AFE450003233A /* CoreMLClassification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreMLClassification.swift; sourceTree = "<group>"; };
+		62102CD0264B0C270003233A /* MobileNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNet.mlmodel; sourceTree = "<group>"; };
+		62102CD2264B15050003233A /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		62102CD4264B15640003233A /* CameraCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraCoordinator.swift; sourceTree = "<group>"; };
+		62102CD6264B15920003233A /* VisionProcessingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionProcessingCoordinator.swift; sourceTree = "<group>"; };
+		62102CD8264B167B0003233A /* ObjectDetector.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ObjectDetector.mlmodel; sourceTree = "<group>"; };
 		6254E9D2260A8CEE00260E7A /* myAppSwiftUI2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myAppSwiftUI2App.swift; sourceTree = "<group>"; };
 		6254E9D3260A8CEE00260E7A /* NewsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsList.swift; sourceTree = "<group>"; };
 		6254E9D4260A8CEF00260E7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -126,6 +142,8 @@
 		62C5977F262CF77000577E94 /* AsyncRemoteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncRemoteImage.swift; sourceTree = "<group>"; };
 		62C59785262CF8A200577E94 /* RemoteImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImageView.swift; sourceTree = "<group>"; };
 		62C5978B262CFAED00577E94 /* AsyncImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageCache.swift; sourceTree = "<group>"; };
+		62C59796262D0FC100577E94 /* NetworkAPIProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPIProvider.swift; sourceTree = "<group>"; };
+		62C597A0262D10CE00577E94 /* WeatherAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +178,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		62102CC9264AFBC00003233A /* ML */ = {
+			isa = PBXGroup;
+			children = (
+				62102CD0264B0C270003233A /* MobileNet.mlmodel */,
+				62102CCA264AFBCF0003233A /* MyImageClassifier1.mlmodel */,
+				62102CD8264B167B0003233A /* ObjectDetector.mlmodel */,
+				62102CCE264AFE450003233A /* CoreMLClassification.swift */,
+				62102CD2264B15050003233A /* CameraView.swift */,
+				62102CD4264B15640003233A /* CameraCoordinator.swift */,
+				62102CD6264B15920003233A /* VisionProcessingCoordinator.swift */,
+			);
+			path = ML;
+			sourceTree = "<group>";
+		};
 		6254E9CC260A8CEE00260E7A = {
 			isa = PBXGroup;
 			children = (
@@ -175,6 +207,8 @@
 		6254E9D1260A8CEE00260E7A /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				62102CC9264AFBC00003233A /* ML */,
+				62C59795262D0E8200577E94 /* NetworkAPI */,
 				62C59774262CF20800577E94 /* SupportingViews */,
 				62C5975A262CA79F00577E94 /* Tools */,
 				62C539D626265035005D732B /* WeatherNetworking */,
@@ -318,6 +352,15 @@
 				62C59775262CF21F00577E94 /* ActivityIndicator.swift */,
 			);
 			path = SupportingViews;
+			sourceTree = "<group>";
+		};
+		62C59795262D0E8200577E94 /* NetworkAPI */ = {
+			isa = PBXGroup;
+			children = (
+				62C59796262D0FC100577E94 /* NetworkAPIProvider.swift */,
+				62C597A0262D10CE00577E94 /* WeatherAPI.swift */,
+			);
+			path = NetworkAPI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -480,13 +523,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62C59797262D0FC100577E94 /* NetworkAPIProvider.swift in Sources */,
 				62C59780262CF77000577E94 /* AsyncRemoteImage.swift in Sources */,
 				62C53959261CD80F005D732B /* AddNews.swift in Sources */,
+				62102CCF264AFE450003233A /* CoreMLClassification.swift in Sources */,
 				62C539A7262534B2005D732B /* MyImage.swift in Sources */,
 				6254E9FD260A8CEF00260E7A /* NewsList.swift in Sources */,
 				62C5397E261D19F2005D732B /* ProfileEditor.swift in Sources */,
 				6254E9FB260A8CEF00260E7A /* myAppSwiftUI2App.swift in Sources */,
+				62102CD1264B0C270003233A /* MobileNet.mlmodel in Sources */,
+				62C597A1262D10CE00577E94 /* WeatherAPI.swift in Sources */,
 				6254EA2B260A9B5700260E7A /* NewsDetailView.swift in Sources */,
+				62102CD5264B15640003233A /* CameraCoordinator.swift in Sources */,
 				62C5394D261CD713005D732B /* UserData.swift in Sources */,
 				62C539C526264173005D732B /* LocationViewModel.swift in Sources */,
 				62C539AF26257A8A005D732B /* MapView.swift in Sources */,
@@ -494,16 +542,20 @@
 				62C59786262CF8A200577E94 /* RemoteImageView.swift in Sources */,
 				62C539D026264261005D732B /* CurrentLocationMapView.swift in Sources */,
 				62C5978C262CFAED00577E94 /* AsyncImageCache.swift in Sources */,
+				62102CD7264B15920003233A /* VisionProcessingCoordinator.swift in Sources */,
 				62C53998261D3332005D732B /* Collection.swift in Sources */,
 				62C5975C262CA7C200577E94 /* String+Extension.swift in Sources */,
 				62C539BD26263BDF005D732B /* GestureView.swift in Sources */,
 				62C5396B261D07F6005D732B /* TabedView.swift in Sources */,
+				62102CD9264B167B0003233A /* ObjectDetector.mlmodel in Sources */,
 				62C539EF262667C2005D732B /* WeatherNetworkResponse.swift in Sources */,
 				62C59776262CF21F00577E94 /* ActivityIndicator.swift in Sources */,
+				62102CCB264AFBCF0003233A /* MyImageClassifier1.mlmodel in Sources */,
 				62C53991261D320F005D732B /* ImagePickView.swift in Sources */,
 				62C539D8262650E4005D732B /* WeatherNetworkModel.swift in Sources */,
 				62C5398A261D3175005D732B /* ImagePicker.swift in Sources */,
 				62C539E82626611D005D732B /* NetworkErrors.swift in Sources */,
+				62102CD3264B15050003233A /* CameraView.swift in Sources */,
 				62C5976C262CACEE00577E94 /* WeatherDataModel.swift in Sources */,
 				62C53964261CEB6E005D732B /* AddNewsData.swift in Sources */,
 				62C53972261D088F005D732B /* Profile.swift in Sources */,

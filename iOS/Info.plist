@@ -48,5 +48,7 @@
 	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Need location to show user&apos;s current location</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Use the camera to perform object detection</string>
 </dict>
 </plist>
